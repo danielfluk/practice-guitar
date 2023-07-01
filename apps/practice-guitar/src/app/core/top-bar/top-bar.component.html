@@ -1,0 +1,39 @@
+<mat-toolbar
+  color="primary"
+  class="navbar-header"
+  aria-label="Top Toolbar"
+>
+  <a mat-button routerLink="/" aria-label="Practice Guitar">
+    <img
+      class="logo"
+      matButtonIcon
+      src="assets/img/guitar-logo.svg"
+      alt="angular"
+      aria-hidden="true"
+    />
+    <span>Practice Guitar</span>
+  </a>
+  <a
+    mat-button
+    class="navbar-hide-small"
+    routerLink="notes"
+    routerLinkActive="navbar-header-item-selected"
+    >Notes</a
+  >
+  <a
+    mat-button
+    class="navbar-hide-small"
+    routerLink="chords"
+    routerLinkActive="navbar-header-item-selected"
+    >Chords</a
+  >
+  <a
+    mat-button
+    class="navbar-hide-small"
+    routerLink="scales"
+    routerLinkActive="navbar-header-item-selected"
+    >Scales</a
+  >
+  <div class="flex-spacer"></div>
+  <practice-guitar-theme-picker></practice-guitar-theme-picker>
+</mat-toolbar>

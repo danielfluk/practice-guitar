@@ -8,18 +8,29 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/practice-guitar",
         "index": "apps/practice-guitar/src/index.html",
         "main": "apps/practice-guitar/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/practice-guitar/tsconfig.app.json",
         "assets": [
           "apps/practice-guitar/src/favicon.ico",
           "apps/practice-guitar/src/assets"
         ],
-        "styles": ["apps/practice-guitar/src/styles.scss"],
+        "styles": [
+          "apps/practice-guitar/src/styles.scss",
+          {
+            "input": "apps/practice-guitar/src/styles/themes/dark.scss",
+            "bundleName": "dark-theme",
+            "inject": false
+          }
+        ],
         "scripts": []
       },
       "configurations": {
@@ -69,7 +80,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/practice-guitar/**/*.ts",
@@ -79,7 +92,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/practice-guitar/jest.config.ts",
         "passWithNoTests": true
